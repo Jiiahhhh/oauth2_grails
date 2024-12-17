@@ -44,7 +44,7 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
-    <a href="/oauth2/authorization/google">
+    <a href="${createLink(controller: 'auth', action: 'google')}">
 %{--    <a href="https://www.google.com/">--}%
         <button class="login-btn">Login with Google</button>
     </a>

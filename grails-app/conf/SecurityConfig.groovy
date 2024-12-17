@@ -12,11 +12,11 @@ class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/login/**", "/oauth2/**", "/error**").permitAll()
+                .antMatchers("/", "/home/login", "/oauth2/**", "/error**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .oauth2Login() // Aktifkan login OAuth2
-                .defaultSuccessUrl("/home", true) // Redirect setelah login sukses
+                .defaultSuccessUrl("/home/index", true) // Redirect setelah login sukses
                 .and()
                 .logout()
                 .logoutSuccessUrl("/") // Redirect setelah logout
